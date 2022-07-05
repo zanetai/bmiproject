@@ -1,7 +1,7 @@
 def GetWeight():
     while True:
         try:
-            weight = int(input("What is your weight - kg?: "))
+            weight = float(input("What is your weight - kg?: "))
             if weight <= 0:
                 print("Your weight can't be 0 or less!")
                 continue
@@ -28,7 +28,7 @@ def GetBMI():
     weight = GetWeight()
     height = GetHeight()
               
-    bmi = round(weight / (height**2), 1)
+    bmi = weight / (height**2)
     return bmi
 
 
@@ -44,7 +44,7 @@ def CountBMI():
     elif bmi >= 25:
         result = "overweight"
 
-    print(f"Your BMI is {bmi} and this is considered {result}.")
+    print(f"Your BMI is {round(bmi, 1)} and this is considered {result}.")
 
 
 CountBMI()
